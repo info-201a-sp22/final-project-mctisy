@@ -1,10 +1,18 @@
 library(plotly)
 library(bslib)
+library("htmlwidgets")
+library("DT")
 
 covid_df <- read.csv("worldometer_coronavirus_summary_data.csv")
 covid_daily_df <- read.csv("worldometer_coronavirus_daily_data.csv")
 
-features <- c("total_confirmed", "total_deaths", "total_recovered", "active_cases", "serious_or_critical")
+
+features <- c("total confirmed", "total deaths", "total recovered", "active cases", "serious or critical")
+
+my_theme <- bs_theme(bg = "#0b3d91", 
+                     fg = "white",
+                     primary = "#FCC780") 
+
 
 intro_tab <- tabPanel(
   "Introduction",
@@ -18,8 +26,12 @@ intro_tab <- tabPanel(
 sidebar_panel_widget <- sidebarPanel(
   selectInput(
     inputId = "user_selection",
-    label = "Country Options",
-    choices = features,
+    label = "COVID Stat Option",
+    choices = c("total confirmed" = "total_confirmed",
+                "total deaths" = "total_deaths", 
+                "total recovered" = "total_recovered",
+                "active cases" = "active_cases",
+                "serious or critical" = "serious_or_critical"),
     selected = "United States"
   ))
 
@@ -27,30 +39,42 @@ sidebar_panel_widget <- sidebarPanel(
 
 main_panel_plot <- mainPanel(
   plotlyOutput(outputId = "covid_plot"),
-  p("this plot is good because yes")
+  p("This plot attempts to show how each continent is affected by COVID-19 
+    differently. It shows different stats like deaths, recoveries, new cases, 
+    critical conditions and total cases and compares it with the other 
+    continents.")
 )
 
 page_1 <- tabPanel(
-  "covid stats by continent",
+  "Covid Stats by Continent",
   sidebarLayout(
     sidebar_panel_widget,
-    main_panel_plot
-  )
+    main_panel_plot,
+  ), 
 )
 
 summary_tab <- tabPanel(
   "Summary Page",
   fluidPage(
     h1("Summary"),
-    p("summary info")
+    h3("Summary Takeaway 1"),
+    p("As you can see from the Covid stats by continent, Africa and 
+    Australia/Oceania were affected by COVID-19 the least. They had the least
+    deaths, confirmed cases, critical cases, and active cashes. On the other
+    hand, South America and Europe were affected the most by having the most 
+    deaths, active cases, confirmed cases, and critical cases. With each feature
+    you can predict insights that could potentially explain what was going on
+    with each country. For example, the high active cases within Europe could
+    indicate that there were not enough regulations and traveling restrictions.
+    Meanwhile, a high total death count and critical personnel in South America
+    could show a lack of medical attention or technological advancements.")
   )
 )
 
 
 ui <- navbarPage(
-  "Climate Change",
+  "COVID Statistics",
   intro_tab,
   page_1,
-  summary_tab
-)
+  summary_tab)
 
