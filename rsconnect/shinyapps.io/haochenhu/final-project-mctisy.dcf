@@ -1,0 +1,14 @@
+name: final-project-mctisy
+title: final-project-mctisy
+username:
+account: haochenhu
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6408910
+bundleId: 5966195
+url: https://haochenhu.shinyapps.io/final-project-mctisy/
+when: 1654056042.69056
+lastSyncTime: 1654056042.69056
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: README.md

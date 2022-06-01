@@ -30,7 +30,7 @@ main_panel_plot <- mainPanel(
   p("this plot is good because yes")
 )
 
-Page_1 <- tabPanel(
+page_1 <- tabPanel(
   "covid stats by continent",
   sidebarLayout(
     sidebar_panel_widget,
