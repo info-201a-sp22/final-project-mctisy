@@ -3,8 +3,7 @@
 
 Authors: Haochen Hu (haochh3@uw.edu), Eason Lin (yichl42@uw.edu), Shammu Meyyappan (shammu53@uw.edu), Vincent Chen (vjc6600@uw.edu)
 
-Link: Link to your Shiny App here
-https://haochenhu.shinyapps.io/final-project-mctisy/
+Link: Link to your Shiny App here: https://haochenhu.shinyapps.io/final-project-mctisy/
 
 Please create the necessary files for your multi-page Shiny app in this GitHub repository. Consult the Canvas assignment for more details. Be sure to publish your app on Shinyapps.io.
 
