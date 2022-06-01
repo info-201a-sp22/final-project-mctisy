@@ -75,6 +75,6 @@ summary_tab <- tabPanel(
 ui <- navbarPage(
   "COVID Statistics",
   intro_tab,
-  page_1,
+  page_1, theme = my_theme,
   summary_tab)
 
