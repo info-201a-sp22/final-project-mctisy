@@ -17,8 +17,10 @@ my_theme <- bs_theme(bg = "#0b3d91",
 intro_tab <- tabPanel(
   "Introduction",
   fluidPage(
-    h1("My app here"),
-    p("This is a demo web app!")
+    h1("Worldwide COVID-19 Statistics"),
+    h3("Introduction"),
+    p("This is a demo web app!"),
+    h3(""),
   )
 )
 
@@ -27,11 +29,11 @@ sidebar_panel_widget <- sidebarPanel(
   selectInput(
     inputId = "user_selection",
     label = "COVID Stat Option",
-    choices = c("total confirmed" = "total_confirmed",
-                "total deaths" = "total_deaths", 
-                "total recovered" = "total_recovered",
-                "active cases" = "active_cases",
-                "serious or critical" = "serious_or_critical"),
+    choices = c("Total Confirmed" = "total_confirmed",
+                "Total Deaths" = "total_deaths", 
+                "Total Recovered" = "total_recovered",
+                "Active Cases" = "active_cases",
+                "Serious or Critical" = "serious_or_critical"),
     selected = "United States"
   ))
 
@@ -73,7 +75,7 @@ summary_tab <- tabPanel(
 
 
 ui <- navbarPage(
-  "COVID Statistics",
+  "Worldwide COVID-19 Statistics",
   intro_tab,
   page_1,
   summary_tab)
