@@ -9,9 +9,9 @@ covid_daily_df <- read.csv("worldometer_coronavirus_daily_data.csv")
 
 features <- c("total confirmed", "total deaths", "total recovered", "active cases", "serious or critical")
 
-my_theme <- bs_theme(bg = "#FAFDFF", 
-                     fg = "#385E72",
-                     primary = "#6AABD2") 
+my_theme <- bs_theme(bg = "#faf5f6", 
+                     fg = "#785851",
+                     primary = "#c5978e") 
 
 
 intro_tab <- tabPanel(
