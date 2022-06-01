@@ -23,8 +23,7 @@ covid_plot <-  ggplot(data = filtered_df) +
        labs(title = "COVID Statistics by Continent", 
            x = "Continents", 
            y = "Number of People in Millions",
-           color = "Legend Title")
-    
+           color = "Legend Title") + theme_minimal()
     
     
     return(covid_plot)
