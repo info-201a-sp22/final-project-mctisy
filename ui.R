@@ -19,7 +19,7 @@ intro_tab <- tabPanel(
   fluidPage(
     h1("Worldwide COVID-19 Statistics"),
     h3("Introduction"),
-    p("This is a demo web app!"),
+    p(""),
     h3(""),
   )
 )
