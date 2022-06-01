@@ -1,7 +1,7 @@
 # Title of Your Final Project Here 
 ## INFO 201 "Foundational Skills for Data Science" — Spring 2022
 
-Authors: Your names here
+Authors: Haochen Hu (haochh3@uw.edu), Eason Lin (yichl42@uw.edu), Shammu Meyyappan (shammu53@uw.edu), Vincent Chen (vjc6600@uw.edu)
 
 Link: Link to your Shiny App here
 
