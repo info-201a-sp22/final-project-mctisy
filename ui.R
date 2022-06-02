@@ -11,18 +11,9 @@ features <- c("total confirmed", "total deaths", "total recovered", "active case
 
 my_theme <- bs_theme(bg = "#faf5f6", 
                      fg = "#785851",
-                     primary = "#c5978e") 
+                     primary = "#635067") 
 
 
-intro_tab <- tabPanel(
-  "Introduction",
-  fluidPage(
-    h1("Worldwide COVID-19 Statistics"),
-    h3("Introduction"),
-    p(""),
-    h3(""),
-  )
-)
 
 
 sidebar_panel_widget <- sidebarPanel(
@@ -38,13 +29,20 @@ sidebar_panel_widget <- sidebarPanel(
   ))
 
 
-
 main_panel_plot <- mainPanel(
   plotlyOutput(outputId = "covid_plot"),
   p("This plot attempts to show how each continent is affected by COVID-19 
     differently. It shows different stats like deaths, recoveries, new cases, 
     critical conditions and total cases and compares it with the other 
     continents.")
+)
+
+############ Tabpanels 
+intro_tab <- tabPanel(
+  "Introduction",
+  fluidPage(
+    includeMarkdown("introductory.md")
+  )
 )
 
 page_1 <- tabPanel(
@@ -69,10 +67,12 @@ summary_tab <- tabPanel(
     with each country. For example, the high active cases within Europe could
     indicate that there were not enough regulations and traveling restrictions.
     Meanwhile, a high total death count and critical personnel in South America
-    could show a lack of medical attention or technological advancements.")
+    could show a lack of medical attention or technological advancements."),
+    h3("Summary Takeaway 2"),
+    h3("Summary Takeaway 3"),
   )
 )
-
+############
 
 ui <- navbarPage(
   "Worldwide COVID-19 Statistics",
