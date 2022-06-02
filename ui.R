@@ -62,7 +62,25 @@ main_panel_plot2 <- mainPanel(
 )
 
 
-############ Tabpanels
+############ 
+
+sidebar_panel_widget3 <- sidebarPanel(
+  checkboxGroupInput(
+    inputId = "checkbox_selection",
+    label = "Select Your Country(ies)",
+    choices = c("USA", "China", "Japan", "Germany", "UK"),
+    selected = "China"
+  )
+)
+
+main_panel_plot3 <- mainPanel(
+  plotlyOutput(outputId = "covid_country_plot"),
+  p("This chart attempts to show the trends of daily new Covid cases for the world's top five
+    economics throughout 2021. In this chart, you can select one or more country you would
+    like to explore the patterns and draw conclusion by comparing them together.")
+)
+
+#############
 intro_tab <- tabPanel(
   "Introduction",
   fluidPage(
@@ -85,6 +103,14 @@ page_2 <- tabPanel(
     main_panel_plot2,
   ),
 )
+
+page_3 <- tabPanel(
+  "Covid Stats by Country",
+  sidebarLayout(
+    sidebar_panel_widget3,
+    main_panel_plot3,
+  )
+) 
 
 summary_tab <- tabPanel(
   "Summary Page",
@@ -134,43 +160,12 @@ summary_tab <- tabPanel(
 )
 ############
 
-sidebar_panel_widget3 <- sidebarPanel(
-  
-  checkboxGroupInput(
-    inputId = "country_selection",
-    label = "Select Your Country(ies)",
-    choices = c("USA", "China", "Japan", "Germany", "UK"),
-    selected = "China"
-  )
-  
-)
-
-main_panel_plot3 <- mainPanel(
-  plotlyOutput(outputId = "covid_country_plot"),
-  p("This chart attempts to show the trends of daily new Covid cases for the world's top five
-    economics throughout 2021. In this chart, you can select one or more country you would
-    like to explore the patterns and draw conclusion by comparing them together.")
-)
-
-
-page_3 <- tabPanel(
-  "Covid Stats by Country",
-  sidebarLayout(
-    sidebar_panel_widget3,
-    main_panel_plot3,
-  )
-) 
-
-##########
 ui <- navbarPage(
   "Worldwide COVID-19 Statistics",
   intro_tab,
   page_1,
-<<<<<<< HEAD
-  page_3,
-=======
   page_2,
->>>>>>> 4092722dad57243c4cf99f7118ebd5f21efbfb59
+  page_3,
   theme = my_theme,
   summary_tab
 )
