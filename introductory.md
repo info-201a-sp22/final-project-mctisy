@@ -12,7 +12,8 @@ Considering that COVID-19 is widespread and harms people's health, this is impor
 
 Accordingly, we plan to record the data and analyze it, and we hope that we can aid the government and general population in making decisions going forward.
 
-### Major questions we are seeking to answer
+### Main questions we are seeking to answer
+
 - Is there a relationship between specific parts of the world and COVID-19 deaths?
 
 - When were the 3 days with the most new cases?
@@ -25,9 +26,13 @@ Accordingly, we plan to record the data and analyze it, and we hope that we can 
 
 ### The dataset we are using
 
-Our dataset is from kaggle, and here is the link: <https://www.kaggle.com/datasets/josephassaker/covid19-global-dataset>. Kaggle is an online community which allows users to find and publish data sets and allow scientists to explorer data, work with other data scientists to solve data science challenges. 
+We use the dataset named Covid-19 Global Dataset from kaggle, and here is the link: <https://www.kaggle.com/datasets/josephassaker/covid19-global-dataset>. Kaggle is an online community which allows users to find and publish data sets and allow scientists to explorer data, work with other data scientists to solve data science challenges. 
 
-Our dataset was scraped by Joseph Assaker, an artificial intelligence engineer from Lebanon, on March 17, 2022 from [Worldometer](https://www.worldometers.info/coronavirus/), a trusted live-tracker of coronavirus data through official government reports. The data was collected in an attempt to more easily monitor and predict future trends regarding COVID-19, both on a worldwide scale and within specific countries. 
+Our dataset was scraped by Joseph Assaker, an artificial intelligence engineer from Lebanon, on March 17, 2022 from [Worldometer](https://www.worldometers.info/coronavirus/), a trusted live-tracker of coronavirus data through official government reports so our data is authoritative.
+
+We want to do research on the relationships between COVID-19 outbreaks and both the seasons of the year and different parts of the world. This dataset include all the statistics we want, so it best fits our project.
+
+The data was collected in an attempt to more easily monitor and predict future trends regarding COVID-19, both on a worldwide scale and within specific countries. 
 
 <img src="./pictures/covid.png" alt="covid" style="width:500px;"/>
 
