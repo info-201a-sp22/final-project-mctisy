@@ -19,7 +19,8 @@ server <- function(input, output) {
       )
 
     covid_plot <- ggplot(data = filtered_df) +
-      geom_bar(mapping = aes(x = continent, y = .data[[input$user_selection]] / 100000),
+      geom_bar(mapping = aes(x = continent, 
+                             y = .data[[input$user_selection]] / 100000),
                stat = "identity") +
       labs(
         title = "COVID-19 Statistics by Continent",
