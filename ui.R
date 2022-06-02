@@ -9,11 +9,16 @@ covid_daily_df <- read.csv("worldometer_coronavirus_daily_data.csv")
 
 features <- c("total confirmed", "total deaths", "total recovered", "active cases", "serious or critical")
 
+############ Beautification and CSS formating
 my_theme <- bs_theme(
   bg = "#faf7f8",
   fg = "#4a3a40",
   primary = "#87495f"
-)
+) %>% bs_add_rules(sass::sass_file("my_style.scss"))
+
+
+############
+
 
 sidebar_panel_widget <- sidebarPanel(
   selectInput(
@@ -37,6 +42,7 @@ main_panel_plot <- mainPanel(
     critical conditions and total cases and compares it with the other
     continents.")
 )
+
 
 ############ Tabpanels
 intro_tab <- tabPanel(
