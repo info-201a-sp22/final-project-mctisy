@@ -6,17 +6,19 @@ library("markdown")
 covid_df <- read.csv("worldometer_coronavirus_summary_data.csv")
 covid_daily_df <- read.csv("worldometer_coronavirus_daily_data.csv")
 
-features <- c("total confirmed", "total deaths", "total recovered", 
-              "active cases", "serious or critical")
+features <- c(
+  "total confirmed", "total deaths", "total recovered",
+  "active cases", "serious or critical"
+)
 
 ############ Beautification and CSS formating
 my_theme <- bs_theme(
   bg = "#faf7f8",
   fg = "#4a3a40",
   primary = "#87495f"
+  # this scss file adds rounded border in all pictures, sets gradient for
+  # the top bar and increases page left and right margins.
 ) %>% bs_add_rules(sass::sass_file("my_style.scss"))
-
-
 ############
 
 
@@ -50,19 +52,20 @@ sidebar_panel_widget2 <- sidebarPanel(
     inputId = "country_selection",
     label = "Select a Country",
     choices = covid_df$country,
-    selected = "USA")
+    selected = "USA"
+  )
 )
 
 main_panel_plot2 <- mainPanel(
   plotlyOutput(outputId = "covid_tracker"),
-  p("This chart attempts to clearly display trends regarding the number of 
-    daily new COVID-19 cases in each country. By allowing the user to select 
-    any country, they can easily compare and contrast the effects of COVID-19 
+  p("This chart attempts to clearly display trends regarding the number of
+    daily new COVID-19 cases in each country. By allowing the user to select
+    any country, they can easily compare and contrast the effects of COVID-19
     on different places across the globe over time.")
 )
 
 
-############ 
+############
 
 sidebar_panel_widget3 <- sidebarPanel(
   checkboxGroupInput(
@@ -105,17 +108,18 @@ page_2 <- tabPanel(
 )
 
 page_3 <- tabPanel(
-  "Covid Stats by Country",
+  "COVID-19 Stats by Country",
   sidebarLayout(
     sidebar_panel_widget3,
     main_panel_plot3,
   )
-) 
+)
 
 summary_tab <- tabPanel(
-  "Summary Page",
+  "Summary",
   fluidPage(
     h1("Summary"),
+    img(src = "summary.png", style = "width:180px"),
     h3("Takeaway #1"),
     p("As you can see from the COVID-19 stats by continent, Africa and
     Australia/Oceania were affected by COVID-19 the least. They had the least
@@ -128,32 +132,32 @@ summary_tab <- tabPanel(
     Meanwhile, a high total death count and critical personnel in South America
     could show a lack of medical attention or technological advancements."),
     h3("Takeaway #2"),
-    p("Upon observing various countries through the COVID-19 cases tracker, 
-      a clear pattern emerges of many countries' largest spike in daily new 
-      cases occuring around the end of 2021 and beginning of 2022--the height 
-      of the Omicron variant. This can be seen across many countries, for 
-      instance in Slovenia, daily new cases never eclipsed 5000 until the 
-      Omicron variant in early 2022, when they surpassed even 20000 daily new 
-      cases. Monitoring the trends of when these spikes occur can allow us to
-      detect new variants of the disease, like Omicron, and further understand
-      what causes COVID-19 to spread faster--ultimately allowing us to stay
-      better protected and work towards a post-COVID world."),
+    p("Upon observing various countries through the COVID-19 cases tracker,
+    a clear pattern emerges of many countries' largest spike in daily new
+    cases occuring around the end of 2021 and beginning of 2022--the height
+    of the Omicron variant. This can be seen across many countries, for
+    instance in Slovenia, daily new cases never eclipsed 5000 until the
+    Omicron variant in early 2022, when they surpassed even 20000 daily new
+    cases. Monitoring the trends of when these spikes occur can allow us to
+    detect new variants of the disease, like Omicron, and further understand
+    what causes COVID-19 to spread faster--ultimately allowing us to stay
+    better protected and work towards a post-COVID world."),
     h3("Takeaway #3"),
-    p("From the chart, it is quite clear to see that the inflection points and the 
-    trends of the epidemic situation in each country are not exactly the same. To be 
+    p("From the chart, it is quite clear to see that the inflection points and the
+    trends of the epidemic situation in each country are not exactly the same. To be
     more specific, China and Germany both reached the peak in December (about 113 and 71887),
     while Japan reached the peak in September (about 18797). The daily change in the UK
-    is relatively more complex: it experienced a sharp drop from January to February, but 
+    is relatively more complex: it experienced a sharp drop from January to February, but
     rebounded from July and reached the peak in December as well. Among them, the number of
     daily increase cases in the United States is much higher than that in other countries
     (even larger than the sum). The most important insight from my analysis is China's 'case
-    cleraing' epidemic prevention policy makes their overall cases and daily new increase far 
+    cleraing' epidemic prevention policy makes their overall cases and daily new increase far
     lower than that of other countries. When we point to other countries, all points in China
     seem to be on the coordinate axis. Therefore, China deserves to be called 'the safest
     epidemic situation in the world at present'. Once we check the USA, the points of other
     countries are all below the US and there is a large difference between them. With those
     in mind, we can also explain this relative amount through different epidemic policies
-    in those countries. For the broader implications of this chart, I would say I chose to 
+    in those countries. For the broader implications of this chart, I would say I chose to
     study these five countries since they are the world's top five economies and the conclusions
     drawn from them is fairly applicable to other countries.")
   )

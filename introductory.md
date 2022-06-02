@@ -1,6 +1,6 @@
 # Worldwide COVID-19 Statistics
 
-<img src="./pictures/covid19.png" alt="covid19" style="width:200px;"/>
+<img src="./www/covid19.png" alt="covid19" style="width:200px;"/>
 
 ### The importance
 
@@ -16,13 +16,13 @@ Accordingly, we plan to record the data and analyze it, and we hope that we can 
 
 - Is there a relationship between specific parts of the world and COVID-19 deaths?
 
-- When were the 3 days with the most new cases?
+- When are variants most likely to occur?
 
-- After the first COVID-19 outbreak, when did the daily new cases start to reduce?
+- After the each COVID-19 outbreak, when did the daily new cases start to reduce and rebound?
 
-- Is the timing of COVID-19 outbreaks related to the seasons of the year?
+- Is the timing of COVID-19 outbreaks related to the seasons and times of the year?
 
-- How is the time required to quell COVID-19 outbreaks different across the globe?
+- Which countries did the best in preventing COVID-19 in the past, what was the pattern and what can we learn from it? 
 
 ### The dataset we are using
 
@@ -34,7 +34,7 @@ We want to do research on the relationships between COVID-19 outbreaks and both 
 
 The data was collected in an attempt to more easily monitor and predict future trends regarding COVID-19, both on a worldwide scale and within specific countries. 
 
-<img src="./pictures/covid.png" alt="covid" style="width:500px;"/>
+<img src="./www/covid.png" alt="covid" style="width:500px;"/>
 
 ### Ethical questions and limitations 
 
