@@ -90,7 +90,7 @@ summary_tab <- tabPanel(
   "Summary Page",
   fluidPage(
     h1("Summary"),
-    h3("Summary Takeaway 1"),
+    h3("Takeaway #1"),
     p("As you can see from the Covid stats by continent, Africa and
     Australia/Oceania were affected by COVID-19 the least. They had the least
     deaths, confirmed cases, critical cases, and active cashes. On the other
@@ -101,8 +101,8 @@ summary_tab <- tabPanel(
     indicate that there were not enough regulations and traveling restrictions.
     Meanwhile, a high total death count and critical personnel in South America
     could show a lack of medical attention or technological advancements."),
-    h3("Summary Takeaway 2"),
-    h3("Summary Takeaway 3"),
+    h3("Takeaway #2"),
+    h3("Takeaway #3"),
   )
 )
 ############
