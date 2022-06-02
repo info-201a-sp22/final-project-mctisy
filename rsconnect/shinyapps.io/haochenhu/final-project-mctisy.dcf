@@ -5,10 +5,10 @@ account: haochenhu
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 6408910
-bundleId: 5969958
+bundleId: 5969980
 url: https://haochenhu.shinyapps.io/final-project-mctisy/
-when: 1654137082.37745
-lastSyncTime: 1654137082.37747
+when: 1654137571.65646
+lastSyncTime: 1654137571.65648
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: README.md
