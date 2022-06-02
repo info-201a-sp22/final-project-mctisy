@@ -23,7 +23,7 @@ my_theme <- bs_theme(
 sidebar_panel_widget <- sidebarPanel(
   selectInput(
     inputId = "user_selection",
-    label = "COVID Stat Option",
+    label = "COVID-19 Stat Option",
     choices = c(
       "Total Confirmed" = "total_confirmed",
       "Total Deaths" = "total_deaths",
@@ -43,6 +43,24 @@ main_panel_plot <- mainPanel(
     continents.")
 )
 
+############
+
+sidebar_panel_widget2 <- sidebarPanel(
+  selectInput(
+    inputId = "country_selection",
+    label = "Select a Country",
+    choices = covid_df$country,
+    selected = "USA")
+)
+
+main_panel_plot2 <- mainPanel(
+  plotlyOutput(outputId = "covid_tracker"),
+  p("This chart attempts to clearly display trends regarding the number of 
+    daily new COVID-19 cases in each country. By allowing the user to select 
+    any country, they can easily compare and contrast the effects of COVID-19 
+    on different places across the globe.")
+)
+
 
 ############ Tabpanels
 intro_tab <- tabPanel(
@@ -53,10 +71,18 @@ intro_tab <- tabPanel(
 )
 
 page_1 <- tabPanel(
-  "Covid Stats by Continent",
+  "COVID-19 Stats by Continent",
   sidebarLayout(
     sidebar_panel_widget,
     main_panel_plot,
+  ),
+)
+
+page_2 <- tabPanel(
+  "COVID-19 Tracker by Country",
+  sidebarLayout(
+    sidebar_panel_widget2,
+    main_panel_plot2,
   ),
 )
 
@@ -85,6 +111,7 @@ ui <- navbarPage(
   "Worldwide COVID-19 Statistics",
   intro_tab,
   page_1,
+  page_2,
   theme = my_theme,
   summary_tab
 )

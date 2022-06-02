@@ -19,15 +19,28 @@ server <- function(input, output) {
       )
 
     covid_plot <- ggplot(data = filtered_df) +
-      geom_bar(mapping = aes(x = continent, y = .data[[input$user_selection]] / 100000), stat = "identity") +
+      geom_bar(mapping = aes(x = continent, y = .data[[input$user_selection]] / 100000),
+               stat = "identity") +
       labs(
-        title = "COVID Statistics by Continent",
+        title = "COVID-19 Statistics by Continent",
         x = "Continents",
         y = "Number of People in Millions",
         color = "Legend Title"
       ) +
       theme_minimal()
-
     return(covid_plot)
   })
+
+  output$covid_tracker <- renderPlotly({
+      filtered_daily_df <- covid_daily_df %>%
+        mutate(date = as.Date(date)) %>% 
+        filter(country %in% input$country_selection)
+      
+      covid_tracker <- ggplot(data = filtered_daily_df, 
+                              aes(x = date, y = daily_new_cases)) +
+        geom_line() + labs(title = "COVID-19 Tracker by Country", x = "Date",
+                           y = "Daily New Cases") + theme_minimal()
+    return(covid_tracker)
+  })
+  
 }
