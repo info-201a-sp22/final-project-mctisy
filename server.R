@@ -39,7 +39,7 @@ server <- function(input, output) {
       
       covid_tracker <- ggplot(data = filtered_daily_df, 
                               aes(x = date, y = daily_new_cases)) +
-        geom_line() + labs(title = "COVID-19 Tracker by Country", x = "Date",
+        geom_line() + labs(title = "COVID-19 Cases Tracker", x = "Date",
                            y = "Daily New Cases") + theme_minimal()
     return(covid_tracker)
   })

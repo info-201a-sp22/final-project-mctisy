@@ -80,7 +80,7 @@ page_1 <- tabPanel(
 )
 
 page_2 <- tabPanel(
-  "COVID-19 New Cases Tracker by Country",
+  "COVID-19 Cases Tracker",
   sidebarLayout(
     sidebar_panel_widget2,
     main_panel_plot2,
@@ -103,7 +103,7 @@ summary_tab <- tabPanel(
     Meanwhile, a high total death count and critical personnel in South America
     could show a lack of medical attention or technological advancements."),
     h3("Takeaway #2"),
-    p("Upon observing various countries through the new COVID-19 cases tracker, 
+    p("Upon observing various countries through the COVID-19 cases tracker, 
       a clear pattern emerges of many countries' largest spike in daily new 
       cases occuring around the end of 2021 and beginning of 2022--the height 
       of the Omicron variant. This can be seen across many countries, for 
