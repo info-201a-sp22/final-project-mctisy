@@ -8,8 +8,8 @@ covid_daily_df <- read.csv("worldometer_coronavirus_daily_data.csv")
 
 features <- c("total confirmed", "total deaths", "total recovered", "active cases", "serious or critical")
 
-my_theme <- bs_theme(bg = "#faf5f6", 
-                     fg = "#785851",
+my_theme <- bs_theme(bg = "#faf7f8", 
+                     fg = "#4a3a40",
                      primary = "#635067") 
 
 sidebar_panel_widget <- sidebarPanel(
