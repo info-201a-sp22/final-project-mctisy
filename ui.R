@@ -10,7 +10,7 @@ features <- c("total confirmed", "total deaths", "total recovered", "active case
 
 my_theme <- bs_theme(bg = "#faf7f8", 
                      fg = "#4a3a40",
-                     primary = "#635067") 
+                     primary = "#87495f") 
 
 sidebar_panel_widget <- sidebarPanel(
   selectInput(
