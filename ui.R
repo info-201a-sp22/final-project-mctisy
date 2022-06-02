@@ -6,15 +6,11 @@ library("DT")
 covid_df <- read.csv("worldometer_coronavirus_summary_data.csv")
 covid_daily_df <- read.csv("worldometer_coronavirus_daily_data.csv")
 
-
 features <- c("total confirmed", "total deaths", "total recovered", "active cases", "serious or critical")
 
 my_theme <- bs_theme(bg = "#faf5f6", 
                      fg = "#785851",
                      primary = "#635067") 
-
-
-
 
 sidebar_panel_widget <- sidebarPanel(
   selectInput(
@@ -27,7 +23,6 @@ sidebar_panel_widget <- sidebarPanel(
                 "Serious or Critical" = "serious_or_critical"),
     selected = "United States"
   ))
-
 
 main_panel_plot <- mainPanel(
   plotlyOutput(outputId = "covid_plot"),
