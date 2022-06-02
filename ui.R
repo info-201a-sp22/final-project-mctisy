@@ -1,7 +1,6 @@
 library(plotly)
 library(bslib)
 library("htmlwidgets")
-library("DT")
 library("markdown")
 
 covid_df <- read.csv("worldometer_coronavirus_summary_data.csv")
@@ -77,14 +76,60 @@ summary_tab <- tabPanel(
     could show a lack of medical attention or technological advancements."),
     h3("Takeaway #2"),
     h3("Takeaway #3"),
+    p("From the chart, it is quite clear to see that the inflection points and the 
+    trends of the epidemic situation in each country are not exactly the same. To be 
+    more specific, China and Germany both reached the peak in December (about 113 and 71887),
+    while Japan reached the peak in September (about 18797). The daily change in the UK
+    is relatively more complex: it experienced a sharp drop from January to February, but 
+    rebounded from July and reached the peak in December as well. Among them, the number of
+    daily increase cases in the United States is much higher than that in other countries
+    (even larger than the sum). The most important insight from my analysis is China's 'case
+    cleraing' epidemic prevention policy makes their overall cases and daily new increase far 
+    lower than that of other countries. When we point to other countries, all points in China
+    seem to be on the coordinate axis. Therefore, China deserves to be called 'the safest
+    epidemic situation in the world at present'. Once we check the USA, the points of other
+    countries are all below the US and there is a large difference between them. With those
+    in mind, we can also explain this relative amount through different epidemic policies
+    in those countries. For the broader implications of this chart, I would say I chose to 
+    study these five countries since they are the world's top five economies and the conclusions
+    drawn from them is fairly applicable to other countries.")
   )
 )
 ############
 
+sidebar_panel_widget3 <- sidebarPanel(
+  
+  checkboxGroupInput(
+    inputId = "country_selection",
+    label = "Select Your Country(ies)",
+    choices = c("USA", "China", "Japan", "Germany", "UK"),
+    selected = "China"
+  )
+  
+)
+
+main_panel_plot3 <- mainPanel(
+  plotlyOutput(outputId = "covid_country_plot"),
+  p("This chart attempts to show the trends of daily new Covid cases for the world's top five
+    economics throughout 2021. In this chart, you can select one or more country you would
+    like to explore the patterns and draw conclusion by comparing them together.")
+)
+
+
+page_3 <- tabPanel(
+  "Covid Stats by Country",
+  sidebarLayout(
+    sidebar_panel_widget3,
+    main_panel_plot3,
+  )
+) 
+
+##########
 ui <- navbarPage(
   "Worldwide COVID-19 Statistics",
   intro_tab,
   page_1,
+  page_3,
   theme = my_theme,
   summary_tab
 )
